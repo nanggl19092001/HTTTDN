@@ -1,0 +1,9 @@
+color palate:
+
+#E6BA95
+
+#FAFDD6
+
+#E4E9BE
+
+#A2B38B

@@ -26,21 +26,17 @@
           <a class="nav-link" href="#">Menu</a>
         </li>
       </ul>
-      <ul class="navbar-nav account">
-          <li id='cart' class="nav-item">
+      <ul class="navbar-nav">
+          <li class="nav-item">
               <a class="nav-link" href="#">
                 Cart
-              </a>
+            </a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            {{#if username}}
-              {{{username}}}
-            {{else}}
-              <a href="/login">login</a>
-            {{/if}}
+            <img src="" alt="">
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu mr-5" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Account</a></li>
             <li><a class="dropdown-item" href="#">Cart</a></li>
             <li><hr class="dropdown-divider"></li>
@@ -77,40 +73,13 @@
         </ul>
     </div>
 </div>
-<div id="cart-items">
-<table>
-  <thead>
-    <tr>
-      <th>Tên sản phẩm</th>
-      <th>Giá sản phẩm</th>
-      <th>Số lượng</th>
-    </tr>
-  </thead>
-  <tbody id="cart-display">
-
-  </tbody>
-</table>
+<div>
+    {{#each item}}
+        {{{tensanpham}}}
+        {{{giasanpham}}}
+        {{{mota}}}
+    {{/each}}
 </div>
-    <div id="items">
-        {{#each items}}
-            <div class="item">
-                <div class="item-image">
-                    <img src="img/items/{{{id}}}.png" alt="">
-                </div>
-                
-                <div class="info">
-                    <a href="/product/{{{id}}}">{{{tensanpham}}}</a>
-                </div>
-                <div class="info">
-                    <p>Giá sản phẩm: {{{giasanpham}}}</p>
-                </div>   
-                <button onclick="addToCart({{{id}}},'{{{tensanpham}}}',{{{giasanpham}}})">Thêm vào giỏ hàng</button>
-                <input type="number" name="soluong" id="soluong-{{id}}" value="1" min="1">
-                <button>+</button>
-                <button>-</button>
-            </div>
-        {{/each}}
-    </div>
 </body>
 <script src="/script/index.js"></script>
 </html>
